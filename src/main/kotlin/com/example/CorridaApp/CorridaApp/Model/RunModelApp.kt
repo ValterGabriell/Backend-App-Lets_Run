@@ -18,8 +18,8 @@ data class RunModelApp(
     val avergedSpeed: Double = 0.00,
     val totalDistance: Double = 0.00,
     val note: String = "",
-    val isDay: Boolean = true,
-    val isCity: Boolean = true,
+    val isDay: String = "",
+    val isCity: String = "",
     val dateRun: String = "",
     val imgRun : ByteArray? = null
 )
