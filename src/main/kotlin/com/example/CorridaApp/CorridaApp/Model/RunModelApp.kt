@@ -20,6 +20,5 @@ data class RunModelApp(
     val note: String = "",
     val isDay: String = "",
     val isCity: String = "",
-    val dateRun: String = "",
-    val imgRun : ByteArray? = null
+    val dateRun: String = ""
 )
