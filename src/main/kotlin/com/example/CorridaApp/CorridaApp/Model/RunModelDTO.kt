@@ -2,7 +2,7 @@ package com.example.CorridaApp.CorridaApp.Model
 
 data class RunModelDTO(
     var runId: Int? = 0,
-    val userId: Int = 0,
+    val userId: String = "",
     val username: String = "",
     val timRunInSeconds: String = "",
     val runFeeling: String = "",

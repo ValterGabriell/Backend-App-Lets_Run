@@ -2,7 +2,7 @@ package com.example.CorridaApp.CorridaApp.Model
 
 data class RunModelResponse(
     val runId: Int?,
-    val userId: Int,
+    val userId: String = "",
     val username: String,
     val timRunInSeconds: String,
     val runFeeling: String,

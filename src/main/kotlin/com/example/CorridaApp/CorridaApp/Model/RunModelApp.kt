@@ -11,7 +11,7 @@ data class RunModelApp(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val runId: Int? = 0,
-    val userId: Int = 0,
+    val userId: String = "",
     val username: String = "",
     val timRunInSeconds: String = "",
     val runFeeling: String = "",
