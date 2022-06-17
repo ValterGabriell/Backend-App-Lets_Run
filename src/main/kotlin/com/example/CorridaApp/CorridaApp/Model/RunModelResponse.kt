@@ -9,8 +9,8 @@ data class RunModelResponse(
     val avergedSpeed: Double,
     val totalDistance: Double,
     val note: String,
-    val isDay: Boolean,
-    val isCity: Boolean,
+    val isDay: String = "",
+    val isCity: String = "",
     val dateRun: String,
     val imgRun : ByteArray? = null
 )
