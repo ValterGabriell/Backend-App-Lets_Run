@@ -16,7 +16,7 @@ import kotlin.streams.toList
 class RunAppControler(@Autowired val runAppService: RunAppService) {
     private val runMapper = RunMapper()
 
-    @PostMapping("/addRun")
+    @PostMapping("/postRun")
     fun addNewRun(@RequestBody runModelRequest: RunModelRequest): ResponseEntity<RunModelResponse> {
         var runModelDTO = runMapper.requestToDTO(runModelRequest)
         runModelDTO = runAppService.addNewRun(runModelDTO)
