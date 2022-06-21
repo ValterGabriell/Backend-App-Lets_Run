@@ -11,6 +11,5 @@ data class RunModelDTO(
     val note: String = "",
     val isDay: String = "",
     val isCity: String = "",
-    val dateRun: String = "",
-    val img:ByteArray? = null
+    val dateRun: String = ""
 )

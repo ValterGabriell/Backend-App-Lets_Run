@@ -54,7 +54,7 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
     @GetMapping("/getLastRun")
     fun getLastRun(): ResponseEntity<RunModelResponse> {
         val lastRunDTO = runAppService.getLastRun()
-        val lastRunResponse =  runMapper.dTOtoResponse(lastRunDTO)
+        val lastRunResponse = runMapper.dTOtoResponse(lastRunDTO)
         return ResponseEntity(lastRunResponse, HttpStatus.OK)
     }
 
