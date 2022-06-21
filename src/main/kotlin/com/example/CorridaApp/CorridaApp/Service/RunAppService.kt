@@ -21,8 +21,8 @@ class RunAppService(@Autowired private val runAppRepository: RunAppRepository) {
         return runModelDTO
     }
 
-    fun getAll(id: String): List<RunModelDTO> {
-        val list = runAppRepository.findAll()
+    fun getAll(userId: String): List<RunModelDTO> {
+        val list = runAppRepository.findByUserId(userId)
         val listAux = list.stream().map {
             runMapper.fromEntity(it)
         }.toList()

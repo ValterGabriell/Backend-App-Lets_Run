@@ -24,9 +24,9 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         return ResponseEntity(runAppResponse, HttpStatus.CREATED)
     }
 
-    @GetMapping("/getAll/{id}")
-    fun getAll(@PathVariable id:String): ResponseEntity<List<RunModelResponse>> {
-        val runModelDTOList = runAppService.getAll(id)
+    @GetMapping("/getAll/{userId}")
+    fun getAll(@PathVariable userId: String): ResponseEntity<List<RunModelResponse>> {
+        val runModelDTOList = runAppService.getAll(userId)
         val runModelReponseList = runModelDTOList.stream().map {
             runMapper.dTOtoResponse(it)
         }.toList()
