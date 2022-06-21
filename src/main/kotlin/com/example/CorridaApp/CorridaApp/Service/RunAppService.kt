@@ -4,7 +4,6 @@ import com.example.CorridaApp.CorridaApp.Mapper.RunMapper
 import com.example.CorridaApp.CorridaApp.Model.RunModelDTO
 import com.example.CorridaApp.CorridaApp.Repository.RunAppRepository
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 import kotlin.streams.toList
 
@@ -29,22 +28,26 @@ class RunAppService(@Autowired private val runAppRepository: RunAppRepository) {
         return listAux
     }
 
-    fun orderRunByDate(): List<RunModelDTO> {
-        val list = runAppRepository.findAll(Sort.by(Sort.Direction.DESC, "dateRun"))
+    fun orderRunByDate(id: String): List<RunModelDTO> {
+        val lista = runAppRepository.findByUserId(id).sortedBy {
+            it.dateRun
+        }
+        return lista.stream().map {
+            runMapper.fromEntity(it)
+        }.toList()
+    }
+
+    fun orderRunByKm(id: String): List<RunModelDTO> {
+        val list = runAppRepository.findByUserId(id).sortedBy {
+            it.totalDistance
+        }
         return list.stream().map {
             runMapper.fromEntity(it)
         }.toList()
     }
 
-    fun orderRunByKm(): List<RunModelDTO> {
-        val list = runAppRepository.findAll(Sort.by(Sort.Direction.DESC, "totalDistance"))
-        return list.stream().map {
-            runMapper.fromEntity(it)
-        }.toList()
-    }
-
-    fun getLastRun(): RunModelDTO {
-        val lastRun = runAppRepository.findAll().last()
+    fun getLastRun(userId: String): RunModelDTO {
+        val lastRun = runAppRepository.findByUserId(userId).last()
         return runMapper.fromEntity(lastRun)
     }
 

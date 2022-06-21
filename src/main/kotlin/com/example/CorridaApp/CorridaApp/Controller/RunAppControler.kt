@@ -34,27 +34,27 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         return ResponseEntity(runModelReponseList, HttpStatus.OK)
     }
 
-    @GetMapping("/orderByDate")
-    fun orderRunByDate(): ResponseEntity<List<RunModelResponse>> {
-        val orderByDateListDTO = runAppService.orderRunByDate()
+    @GetMapping("/orderByDate/{userId}")
+    fun orderRunByDate(@PathVariable userId: String): ResponseEntity<List<RunModelResponse>> {
+        val orderByDateListDTO = runAppService.orderRunByDate(userId)
         val orderByDateListResponse = orderByDateListDTO.stream().map {
             runMapper.dTOtoResponse(it)
         }.toList()
         return ResponseEntity(orderByDateListResponse, HttpStatus.OK)
     }
 
-    @GetMapping("/orderByKm")
-    fun orderRunByKm(): ResponseEntity<List<RunModelResponse>> {
-        val orderByKMListDTO = runAppService.orderRunByKm()
+    @GetMapping("/orderByKm/{userId}")
+    fun orderRunByKm(@PathVariable userId: String): ResponseEntity<List<RunModelResponse>> {
+        val orderByKMListDTO = runAppService.orderRunByKm(userId)
         val orderByKMListResponse = orderByKMListDTO.stream().map {
             runMapper.dTOtoResponse(it)
         }.toList()
         return ResponseEntity(orderByKMListResponse, HttpStatus.OK)
     }
 
-    @GetMapping("/getLastRun")
-    fun getLastRun(): ResponseEntity<RunModelResponse> {
-        val lastRunDTO = runAppService.getLastRun()
+    @GetMapping("/getLastRun/{userId}")
+    fun getLastRun(@PathVariable userId: String): ResponseEntity<RunModelResponse> {
+        val lastRunDTO = runAppService.getLastRun(userId)
         val lastRunResponse = runMapper.dTOtoResponse(lastRunDTO)
         return ResponseEntity(lastRunResponse, HttpStatus.OK)
     }

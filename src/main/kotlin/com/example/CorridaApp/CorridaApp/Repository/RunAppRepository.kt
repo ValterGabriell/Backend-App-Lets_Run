@@ -9,4 +9,5 @@ interface RunAppRepository : JpaRepository<RunModelApp, Int> {
     fun findByUserId(userId: String): List<RunModelApp>
 
 
+
 }
