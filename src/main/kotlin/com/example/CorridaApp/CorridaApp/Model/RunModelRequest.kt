@@ -11,5 +11,6 @@ data class RunModelRequest(
     val note: String = "",
     val isDay: String = "",
     val isCity: String = "",
-    val dateRun: String = ""
+    val dateRun: String = "",
+    val img:ByteArray
 )
