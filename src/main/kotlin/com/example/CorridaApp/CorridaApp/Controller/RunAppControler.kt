@@ -24,12 +24,13 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         return ResponseEntity(runAppResponse, HttpStatus.CREATED)
     }
 
-    @GetMapping("/getAll")
-    fun getAll(): ResponseEntity<List<RunModelResponse>> {
-        val runModelDTOList = runAppService.getAll()
+    @GetMapping("/getAll/{id}")
+    fun getAll(@PathVariable id:String): ResponseEntity<List<RunModelResponse>> {
+        val runModelDTOList = runAppService.getAll(id)
         val runModelReponseList = runModelDTOList.stream().map {
             runMapper.dTOtoResponse(it)
         }.toList()
+
         return ResponseEntity(runModelReponseList, HttpStatus.OK)
     }
 

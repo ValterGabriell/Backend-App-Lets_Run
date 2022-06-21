@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface RunAppRepository : JpaRepository<RunModelApp, Int> {
+    fun findAllById(id: String): MutableList<RunModelApp>
 }
