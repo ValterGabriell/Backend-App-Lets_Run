@@ -21,5 +21,5 @@ data class RunModelApp(
     val isDay: String = "",
     val isCity: String = "",
     val dateRun: String = "",
-    val img:String = ""
+    val imgRun:String = ""
 )

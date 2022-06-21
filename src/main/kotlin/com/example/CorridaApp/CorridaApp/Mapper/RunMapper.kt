@@ -20,7 +20,7 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             entity.isDay,
             entity.isCity,
             entity.dateRun,
-            entity.img
+            entity.imgRun
         )
     }
 
@@ -37,7 +37,7 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             domain.isDay,
             domain.isCity,
             domain.dateRun,
-            domain.img
+            domain.imgRun
         )
     }
 
@@ -54,7 +54,7 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             request.isDay,
             request.isCity,
             request.dateRun,
-            request.img
+            request.imgRun
         )
     }
 
@@ -71,7 +71,7 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             dto.isDay,
             dto.isCity,
             dto.dateRun,
-            dto.img
+            dto.imgRun
         )
     }
 }
