@@ -59,9 +59,9 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         return ResponseEntity(lastRunResponse, HttpStatus.OK)
     }
 
-    @DeleteMapping("/delete/{id}")
-    fun deleteRunById(@PathVariable id: Int): ResponseEntity<RunModelResponse> {
-        runAppService.deleteRunById(id)
+    @DeleteMapping("/delete/{userId}")
+    fun deleteRunById(@PathVariable userId: Int): ResponseEntity<RunModelResponse> {
+        runAppService.deleteRunById(userId)
         return ResponseEntity(HttpStatus.NO_CONTENT)
     }
 
