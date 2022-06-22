@@ -28,6 +28,14 @@ class RunAppService(@Autowired private val runAppRepository: RunAppRepository) {
         return listAux
     }
 
+    fun getAllTest(): List<RunModelDTO> {
+        val list = runAppRepository.findAll()
+        val listAux = list.stream().map {
+            runMapper.fromEntity(it)
+        }.toList()
+        return listAux
+    }
+
     fun orderRunByDate(id: String): List<RunModelDTO> {
         val lista = runAppRepository.findByUserId(id).sortedBy {
             it.dateRun

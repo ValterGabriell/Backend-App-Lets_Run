@@ -34,6 +34,16 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         return ResponseEntity(runModelReponseList, HttpStatus.OK)
     }
 
+    @GetMapping("/getAll")
+    fun getAllTest(): ResponseEntity<List<RunModelResponse>> {
+        val runModelDTOList = runAppService.getAllTest()
+        val runModelReponseList = runModelDTOList.stream().map {
+            runMapper.dTOtoResponse(it)
+        }.toList()
+
+        return ResponseEntity(runModelReponseList, HttpStatus.OK)
+    }
+
     @GetMapping("/orderByDate/{userId}")
     fun orderRunByDate(@PathVariable userId: String): ResponseEntity<List<RunModelResponse>> {
         val orderByDateListDTO = runAppService.orderRunByDate(userId)
