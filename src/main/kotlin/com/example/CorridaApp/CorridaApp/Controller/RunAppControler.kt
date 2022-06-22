@@ -24,14 +24,13 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         return ResponseEntity(runAppResponse, HttpStatus.CREATED)
     }
 
-    @PostMapping("/postRun/{userId}/{runId}")
+    @PutMapping("/postRun/{runId}")
     fun updateRun(
         @RequestBody runModelRequest: RunModelRequest,
-        @PathVariable userId: String,
         @PathVariable runId: Int
     ): ResponseEntity<RunModelResponse> {
         var runModelDTO = runMapper.requestToDTO(runModelRequest)
-        runModelDTO = runAppService.updateRun(userId, runId, runModelDTO)
+        runModelDTO = runAppService.updateRun(runId, runModelDTO)
         val runAppResponse = runMapper.dTOtoResponse(runModelDTO)
         return ResponseEntity(runAppResponse, HttpStatus.CREATED)
     }
