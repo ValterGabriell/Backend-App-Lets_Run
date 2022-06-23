@@ -1,9 +1,7 @@
 package com.example.CorridaApp.CorridaApp.Service
 
 import com.example.CorridaApp.CorridaApp.Mapper.RunMapper
-import com.example.CorridaApp.CorridaApp.Model.ModelIMG
 import com.example.CorridaApp.CorridaApp.Model.RunModelDTO
-import com.example.CorridaApp.CorridaApp.Repository.ImgRepository
 import com.example.CorridaApp.CorridaApp.Repository.RunAppRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -12,8 +10,7 @@ import kotlin.streams.toList
 
 @Service
 class RunAppService(
-    @Autowired private val runAppRepository: RunAppRepository,
-    @Autowired private val imgRepository: ImgRepository
+    @Autowired private val runAppRepository: RunAppRepository
 ) {
 
     private val runMapper = RunMapper()
@@ -24,15 +21,6 @@ class RunAppService(
         runAppModel = runAppRepository.save(runAppModel)
         runModelDTO.runId = runAppModel.runId
         return runModelDTO
-    }
-
-    fun saveJustImg(runId: Int, modelIMG: ModelIMG): ModelIMG {
-        imgRepository.save(modelIMG)
-        return modelIMG
-    }
-
-    fun getImgById(id: Int): Optional<ModelIMG> {
-        return imgRepository.findById(id)
     }
 
     fun getAll(userId: String): List<RunModelDTO> {

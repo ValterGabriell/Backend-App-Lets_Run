@@ -1,7 +1,6 @@
 package com.example.CorridaApp.CorridaApp.Controller
 
 import com.example.CorridaApp.CorridaApp.Mapper.RunMapper
-import com.example.CorridaApp.CorridaApp.Model.ModelIMG
 import com.example.CorridaApp.CorridaApp.Model.RunModelRequest
 import com.example.CorridaApp.CorridaApp.Model.RunModelResponse
 import com.example.CorridaApp.CorridaApp.Service.RunAppService
@@ -26,21 +25,6 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         return ResponseEntity(runAppResponse, HttpStatus.CREATED)
     }
 
-    @PostMapping("/saveImg/{runId}")
-    fun saveJustImg(
-        @RequestBody modelIMG: ModelIMG,
-        @PathVariable runId: Int
-    ): ResponseEntity<ModelIMG> {
-        runAppService.saveJustImg(runId, modelIMG)
-        return ResponseEntity(modelIMG, HttpStatus.CREATED)
-    }
-
-    @GetMapping("/getImgById/{id}")
-    fun saveJustImg(
-        @PathVariable id: Int
-    ): Optional<ModelIMG> {
-        return runAppService.getImgById(id)
-    }
 
     @GetMapping("/getAll/{userId}")
     fun getAll(@PathVariable userId: String): ResponseEntity<List<RunModelResponse>> {
