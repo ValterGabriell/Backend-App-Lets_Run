@@ -1,7 +1,7 @@
-<h1 align="center">Adota Pet GO (Clone)</h1>
-<p align="center">Sistema backend para o aplicativo clone de Adota Pet GO</p>
+<h1 align="center">Let's Run Backend</h1>
+<p align="center">Backend para o aplicativo Let's Run</p>
 <h4 align="center"> 
-    :construction:  Projeto concluído  🟢
+    🟢  Projeto concluído  🟢
 </h4>
 <h2 align="center">
     <img src="https://img.shields.io/static/v1?label=Heroku&message=Working&color=#430098&style=flat&logo=heroku"/>
@@ -19,8 +19,8 @@ Tabela de conteúdos
 <!--te-->
 
 <h1>Sobre</h1>
-<p>O projeto é o backend de uma aplicação que eu estarei criando, um clone do aplicativo "Adota Pet GO" que pode ser encontrado nas lojas de aplicativos ou clicando <a href = "https://play.google.com/store/apps/details?id=com.labup.adotapetv2&hl=pt_BR&gl=US">aqui</a>.
-   O repositório do aplicativo, que está sendo desenvolvido nativamente para Android pode ser encontrado aqui. Foi feito o depoly do projeto para a plataforma do <a href = "">Heroku</a>.</br>
+<p>O backend é para o aplicativo feito por mim, o Let's Run, um aplicativo de corrida, o qual seu repositório pode ser encontrado <a href = "https://play.google.com/store/apps/details?id=com.labup.adotapetv2&hl=pt_BR&gl=US">aqui</a> O backend está hospedado no Heroku.
+  </br>
 <h1>Como usar</h1>
 <h2>Pré-requisitos</h2>
 <img src="https://user-images.githubusercontent.com/63808405/171037587-3c6b6b8f-e9c3-4b97-b4b0-a54d6c9fb8dc.png" width = "250px"></br>
