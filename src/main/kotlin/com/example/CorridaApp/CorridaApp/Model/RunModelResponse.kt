@@ -11,6 +11,5 @@ data class RunModelResponse(
     val note: String,
     val isDay: String = "",
     val isCity: String = "",
-    val dateRun: String,
-    val imgRun:String = ""
+    val dateRun: String
 )
