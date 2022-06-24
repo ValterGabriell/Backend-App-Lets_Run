@@ -9,7 +9,7 @@ data class RunModelRequest(
     val avergedSpeed: Double = 0.00,
     val totalDistance: Double = 0.00,
     val note: String = "",
-    val isDay: String = "",
-    val isCity: String = "",
+    val turno:String="",
+    val local:String="",
     val dateRun: String = ""
 )

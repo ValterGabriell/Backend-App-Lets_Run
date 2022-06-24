@@ -17,8 +17,8 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             entity.avergedSpeed,
             entity.totalDistance,
             entity.note,
-            entity.isDay,
-            entity.isCity,
+            entity.turno,
+            entity.local,
             entity.dateRun
         )
     }
@@ -33,8 +33,8 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             domain.avergedSpeed,
             domain.totalDistance,
             domain.note,
-            domain.isDay,
-            domain.isCity,
+            domain.turno,
+            domain.local,
             domain.dateRun
         )
     }
@@ -49,8 +49,8 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             request.avergedSpeed,
             request.totalDistance,
             request.note,
-            request.isDay,
-            request.isCity,
+            request.turno,
+            request.local,
             request.dateRun
         )
     }
@@ -65,8 +65,8 @@ class RunMapper : Mapper<RunModelDTO, RunModelApp>, MapperTwo<RunModelDTO, RunMo
             dto.avergedSpeed,
             dto.totalDistance,
             dto.note,
-            dto.isDay,
-            dto.isCity,
+            dto.turno,
+            dto.local,
             dto.dateRun
         )
     }
