@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.util.*
 import kotlin.streams.toList
 
 
@@ -34,34 +33,6 @@ class RunAppControler(@Autowired val runAppService: RunAppService) {
         }.toList()
 
         return ResponseEntity(runModelReponseList, HttpStatus.OK)
-    }
-
-    @GetMapping("/getAll")
-    fun getAllTest(): ResponseEntity<List<RunModelResponse>> {
-        val runModelDTOList = runAppService.getAllTest()
-        val runModelReponseList = runModelDTOList.stream().map {
-            runMapper.dTOtoResponse(it)
-        }.toList()
-
-        return ResponseEntity(runModelReponseList, HttpStatus.OK)
-    }
-
-    @GetMapping("/orderByDate/{userId}")
-    fun orderRunByDate(@PathVariable userId: String): ResponseEntity<List<RunModelResponse>> {
-        val orderByDateListDTO = runAppService.orderRunByDate(userId)
-        val orderByDateListResponse = orderByDateListDTO.stream().map {
-            runMapper.dTOtoResponse(it)
-        }.toList()
-        return ResponseEntity(orderByDateListResponse, HttpStatus.OK)
-    }
-
-    @GetMapping("/orderByKm/{userId}")
-    fun orderRunByKm(@PathVariable userId: String): ResponseEntity<List<RunModelResponse>> {
-        val orderByKMListDTO = runAppService.orderRunByKm(userId)
-        val orderByKMListResponse = orderByKMListDTO.stream().map {
-            runMapper.dTOtoResponse(it)
-        }.toList()
-        return ResponseEntity(orderByKMListResponse, HttpStatus.OK)
     }
 
     @GetMapping("/getLastRun/{userId}")
