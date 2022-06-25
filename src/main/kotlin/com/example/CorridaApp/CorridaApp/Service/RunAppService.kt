@@ -31,32 +31,6 @@ class RunAppService(
         return listAux
     }
 
-    fun getAllTest(): List<RunModelDTO> {
-        val list = runAppRepository.findAll()
-        val listAux = list.stream().map {
-            runMapper.fromEntity(it)
-        }.toList()
-        return listAux
-    }
-
-    fun orderRunByDate(id: String): List<RunModelDTO> {
-        val lista = runAppRepository.findByUserId(id).sortedBy {
-            it.dateRun
-        }
-        return lista.stream().map {
-            runMapper.fromEntity(it)
-        }.toList()
-    }
-
-    fun orderRunByKm(id: String): List<RunModelDTO> {
-        val list = runAppRepository.findByUserId(id).sortedBy {
-            it.totalDistance
-        }
-        return list.stream().map {
-            runMapper.fromEntity(it)
-        }.toList()
-    }
-
     fun getLastRun(userId: String): RunModelDTO {
         val lastRun = runAppRepository.findByUserId(userId).last()
         return runMapper.fromEntity(lastRun)
