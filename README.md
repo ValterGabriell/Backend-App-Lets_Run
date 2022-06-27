@@ -12,8 +12,8 @@ Tabela de conteúdos
 <!--ts-->
    * [Sobre](#sobre)
    * [Como usar](#como-usar)
-      * [Pré-Requisitos](#pre-requisitos)
-      * [Endpoints](#endpoints)  
+      * [Pré-Requisitos](#Pré-requisitos)
+      * [Endpoints](#Endpoints)  
    * [Tecnologias](#tecnologias)
    * [Créditos](#creditos)
 <!--te-->
@@ -39,7 +39,8 @@ O formato de json da criação de usuário deve seguir o seguinte padrão:
 ,"username":"name-teste"
 ,"timRunInSeconds":"00:00:00"
 ,"runFeeling":"felicidade"
-,"totalDistance":"0km"
+,"avergedSpeed":0.00
+,"totalDistance":"0.00"
 ,"note":"exemplo de nota"
 ,"turno":"manhã"
 ,"local":"cidade"
