@@ -55,7 +55,7 @@ https://app-corrida-vg.herokuapp.com/runapp/getAll/{userId}
 
 Endereço | Saída
 :-------: | ------:
-https://app-corrida-vg.herokuapp.com/runapp/ | Url Base
+https://runappvg.herokuapp.com/runapp/ | Url Base
 getLastRun/{userId}   | Recupera a última corrida do usuário
 delete/all     | Deleta todas as corridas
 
